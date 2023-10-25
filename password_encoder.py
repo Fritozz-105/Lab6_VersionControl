@@ -7,7 +7,7 @@ def print_menu():
     print('3. Quit')
     print()
 
-
+# Zach Zeng
 def encode_pw(password):
     # Takes the user's input and uses a for loop to turn the input to an integer to add 3 to and then turns it back into
     # a string where it is added to the user_password return.
@@ -19,7 +19,15 @@ def encode_pw(password):
             user_password = user_password + str(int(password[i]) + 3)
     return user_password
 
-
+def decode_pw(user_password):
+        decoded_pass = ''
+        password_total = 0
+        for i in range(len(user_password)):
+            password_total = int(user_password[i]) - 3
+            if password_total < 0:
+                password_total = password_total + 10
+            decoded_pass += str(password_total)
+        return decoded_pass
 def main():
     try:
         user_choice = 1
